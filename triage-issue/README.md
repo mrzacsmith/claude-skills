@@ -32,7 +32,7 @@ Investigate a reported problem, find root cause, and file a GitHub issue with a 
 
 ## Requirements
 
-- `gh` CLI authenticated with access to the target repo
+- **GitHub CLI (`gh`)** — install with `brew install gh`, then `gh auth login`. See [cli.github.com](https://cli.github.com) for other platforms.
 
 ## Install
 

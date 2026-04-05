@@ -44,7 +44,7 @@ AFK is preferred where possible.
 
 ## Requirements
 
-- `gh` CLI authenticated with access to the target repo
+- **GitHub CLI (`gh`)** — install with `brew install gh`, then `gh auth login`. See [cli.github.com](https://cli.github.com) for other platforms.
 
 ## Install
 

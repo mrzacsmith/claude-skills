@@ -38,7 +38,7 @@ Rapidly file one or more well-structured, AI-agent-friendly GitHub issues. Speed
 
 ## Requirements
 
-- `gh` CLI authenticated with access to the target repo
+- **GitHub CLI (`gh`)** — install with `brew install gh`, then `gh auth login`. See [cli.github.com](https://cli.github.com) for other platforms.
 
 ## Install
 

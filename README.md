@@ -20,6 +20,38 @@ A collection of 13 Claude Code custom skills (slash commands) for structured dev
 | [grill-me](./grill-me/) | `/grill-me` | Stress-test a plan or design through relentless interview |
 | [e2e-setup](./e2e-setup/) | `/e2e-setup` | Scaffold Playwright E2E testing with auto-detection |
 
+## Prerequisites
+
+Several skills interact with GitHub via the **GitHub CLI (`gh`)**. Skills that require it: `/write-prd`, `/triage-issue`, `/qa`, `/grind`, `/prd-to-issues`, `/prd-to-plan`.
+
+**Install `gh`:**
+
+```bash
+# macOS
+brew install gh
+
+# Windows
+winget install --id GitHub.cli
+
+# Linux (Debian/Ubuntu)
+sudo apt install gh
+
+# Or see https://cli.github.com for all options
+```
+
+Then authenticate:
+
+```bash
+gh auth login
+```
+
+Other dependencies:
+
+| Dependency | Required by | Install |
+|------------|-------------|---------|
+| `jq` | `/git-guardrails` | `brew install jq` |
+| Node.js + npm | `/e2e-setup` | https://nodejs.org |
+
 ## Installation
 
 Copy any skill's `.md` file into your `~/.claude/commands/` directory (global) or `.claude/commands/` in a project (project-scoped). Then use the corresponding `/command` in Claude Code.

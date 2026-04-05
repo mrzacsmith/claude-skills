@@ -33,7 +33,7 @@ Set up a Claude Code PreToolUse hook that blocks dangerous git commands before t
 
 ## Requirements
 
-- `jq` (`brew install jq` if missing)
+- **`jq`** — install with `brew install jq` (macOS), `sudo apt install jq` (Linux), or see [jqlang.github.io/jq](https://jqlang.github.io/jq/download/)
 
 ## Install
 

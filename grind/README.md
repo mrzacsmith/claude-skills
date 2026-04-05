@@ -38,7 +38,7 @@ Work through open GitHub issues one at a time using TDD, feature branches, and P
 
 ## Requirements
 
-- `gh` CLI authenticated with access to the target repo
+- **GitHub CLI (`gh`)** — install with `brew install gh`, then `gh auth login`. See [cli.github.com](https://cli.github.com) for other platforms.
 
 ## Install
 

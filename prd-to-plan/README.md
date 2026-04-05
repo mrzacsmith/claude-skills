@@ -33,7 +33,7 @@ Accepts the PRD as a GitHub issue number, local file path, or from a previous `/
 
 ## Requirements
 
-- `gh` CLI (if fetching PRD from GitHub)
+- **GitHub CLI (`gh`)** — install with `brew install gh`, then `gh auth login`. See [cli.github.com](https://cli.github.com) for other platforms. Required when fetching a PRD from GitHub issues.
 
 ## Install
 
