@@ -45,6 +45,26 @@ Then authenticate:
 gh auth login
 ```
 
+## GitHub Issue Defaults
+
+Several skills automatically assign issues to `@me` (the authenticated `gh` user) when creating or listing issues. This affects: `/qa`, `/triage-issue`, `/prd-to-issues`, `/write-prd`, and `/grind`.
+
+**Each team member** should add the following to their `~/.claude/CLAUDE.md` to set their GitHub username:
+
+```markdown
+# GitHub Issue Defaults
+
+GitHub username: `<your-github-username>`
+
+**All skills and workflows that interact with GitHub issues MUST follow these rules:**
+
+- **Creating issues** (`/qa`, `/triage-issue`, `/prd-to-issues`, `/epic`, or any `gh issue create`): Always include `--assignee <your-github-username>` unless the user explicitly names a different assignee.
+- **Selecting issues to work** (`/grind`, or any `gh issue list` used to pick up work): Always filter with `--assignee @me`. Do not work issues assigned to other people.
+- **Closing/finishing issues** (`/grind`, `/commit`, PRs): Only close issues assigned to `<your-github-username>` unless explicitly told otherwise.
+```
+
+Replace `<your-github-username>` with your actual GitHub handle. This ensures each person's skills only create and pick up their own issues.
+
 Other dependencies:
 
 | Dependency | Required by | Install |
