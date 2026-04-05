@@ -76,7 +76,7 @@ Create a concrete, ordered list of RED-GREEN cycles. Each cycle is one vertical 
 Create a GitHub issue using:
 
 ```bash
-gh issue create --repo <owner/repo> --title "<concise issue title>" --body "$(cat <<'EOF'
+gh issue create --repo <owner/repo> --assignee @me --title "<concise issue title>" --body "$(cat <<'EOF'
 <issue body>
 EOF
 )"

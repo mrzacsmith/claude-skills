@@ -30,7 +30,7 @@ gh repo view --json nameWithOwner -q .nameWithOwner
 Pull the issue queue:
 
 ```bash
-gh issue list --repo <owner/repo> --state open --limit 50 --json number,title,labels,body
+gh issue list --repo <owner/repo> --state open --assignee @me --limit 50 --json number,title,labels,body
 ```
 
 - If the user specified issue numbers, fetch only those.

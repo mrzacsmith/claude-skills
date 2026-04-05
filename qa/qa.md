@@ -112,7 +112,7 @@ Context an AI agent would need that isn't obvious from the code:
 For the `gh issue create` command:
 
 ```bash
-gh issue create --repo <owner/repo> --title "<concise title>" --label "<label>" --body "$(cat <<'EOF'
+gh issue create --repo <owner/repo> --assignee @me --title "<concise title>" --label "<label>" --body "$(cat <<'EOF'
 <issue body>
 EOF
 )"

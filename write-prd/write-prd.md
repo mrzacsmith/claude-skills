@@ -61,7 +61,7 @@ Present the modules to the user and ask:
 Once you have a complete understanding of the problem and solution, write the PRD using the template below and submit it as a GitHub issue using:
 
 ```bash
-gh issue create --repo <owner/repo> --title "PRD: <feature name>" --body "$(cat <<'EOF'
+gh issue create --repo <owner/repo> --assignee @me --title "PRD: <feature name>" --body "$(cat <<'EOF'
 <prd content here>
 EOF
 )"

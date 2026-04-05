@@ -80,7 +80,7 @@ Ask the user:
 For each approved slice, create a GitHub issue using:
 
 ```bash
-gh issue create --repo <owner/repo> --title "<slice title>" --body "$(cat <<'EOF'
+gh issue create --repo <owner/repo> --assignee @me --title "<slice title>" --body "$(cat <<'EOF'
 <issue body here>
 EOF
 )"
