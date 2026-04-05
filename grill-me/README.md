@@ -1,0 +1,3 @@
+# Grill Me
+
+Interview the user relentlessly about a plan or design until reaching shared understanding, resolving each branch of the decision tree.
