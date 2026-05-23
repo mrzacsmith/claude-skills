@@ -1,6 +1,6 @@
 # claude-skills
 
-A collection of 13 Claude Code custom skills (slash commands) for structured development workflows.
+A collection of 14 Claude Code custom skills (slash commands) for structured development workflows.
 
 ## Skills
 
@@ -17,7 +17,8 @@ A collection of 13 Claude Code custom skills (slash commands) for structured dev
 | [grind](./grind/) | `/grind` | Work through open issues with TDD, feature branches, and PRs |
 | [prd-to-issues](./prd-to-issues/) | `/prd-to-issues` | Break a PRD into vertical-slice GitHub issues |
 | [git-guardrails](./git-guardrails/) | `/git-guardrails` | Set up hooks to block dangerous git commands |
-| [grill-me](./grill-me/) | `/grill-me` | Stress-test a plan or design through relentless interview |
+| [grill-me](./grill-me/) | `/grill-me` | Stress-test a plan or design through relentless interview; uses the project glossary when present |
+| [terms](./terms/) | `/terms` | Build & maintain a project's ubiquitous-language glossary (`CONTEXT.md`), ADRs, and context map |
 | [e2e-setup](./e2e-setup/) | `/e2e-setup` | Scaffold Playwright E2E testing with auto-detection |
 
 ## Prerequisites
