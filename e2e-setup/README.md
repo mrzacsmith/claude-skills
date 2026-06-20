@@ -68,5 +68,5 @@ Runs `playwright test --list` and suggests a first sanity check.
 ## Install
 
 ```bash
-cp e2e-setup.md ~/.claude/commands/
+cp -R e2e-setup ~/.claude/skills/
 ```

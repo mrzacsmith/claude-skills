@@ -38,5 +38,5 @@ Set up a Claude Code PreToolUse hook that blocks dangerous git commands before t
 ## Install
 
 ```bash
-cp git-guardrails.md ~/.claude/commands/
+cp -R git-guardrails ~/.claude/skills/
 ```

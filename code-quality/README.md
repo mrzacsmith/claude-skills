@@ -26,5 +26,5 @@ Run it inside a JavaScript repo. It detects what's already in place, adds only w
 ## Install
 
 ```bash
-cp code-quality.md ~/.claude/commands/
+cp -R code-quality ~/.claude/skills/
 ```

@@ -49,5 +49,5 @@ AFK is preferred where possible.
 ## Install
 
 ```bash
-cp prd-to-issues.md ~/.claude/commands/
+cp -R prd-to-issues ~/.claude/skills/
 ```

@@ -1,3 +1,8 @@
+---
+name: catchup
+description: Catch up on uncommitted work — read all uncommitted git changes (staged, unstaged, untracked) into the conversation to establish context. Use when resuming work or when the user runs /catchup.
+---
+
 # Catch Up on Uncommitted Changes
 
 Read all uncommitted git changes into the conversation to provide context.

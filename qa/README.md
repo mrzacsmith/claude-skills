@@ -43,5 +43,5 @@ Rapidly file one or more well-structured, AI-agent-friendly GitHub issues. Speed
 ## Install
 
 ```bash
-cp qa.md ~/.claude/commands/
+cp -R qa ~/.claude/skills/
 ```

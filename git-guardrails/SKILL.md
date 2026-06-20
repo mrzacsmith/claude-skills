@@ -1,3 +1,8 @@
+---
+name: git-guardrails
+description: Set up git guardrails — a Claude Code PreToolUse hook that intercepts and blocks dangerous git commands such as force-push and hard reset before they run. Use to install git safety hooks or when the user runs /git-guardrails.
+---
+
 # Setup Git Guardrails
 
 Set up a Claude Code PreToolUse hook that intercepts and blocks dangerous git commands before they execute.

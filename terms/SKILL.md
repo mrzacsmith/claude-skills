@@ -3,6 +3,7 @@ name: terms
 description: Build and maintain a project's ubiquitous language — a CONTEXT.md glossary (plus ADRs and, for multi-repo projects, a context map). Interviews you to sharpen terminology, grounds terms in the code, and keeps the docs a living, drift-checked source of truth. Use to bootstrap or audit domain terminology, or when the user says "/terms".
 ---
 
+
 Establish or refine the **ubiquitous language** for this repo: the shared vocabulary used by the code, the developers, and the domain experts. The output is a living `CONTEXT.md` glossary committed in the repo, so the whole team — and every future session — starts from shared understanding instead of re-explaining the domain.
 
 This is the maintenance counterpart to `/grill-me`: grill-me *uses* the glossary while planning; `/terms` *builds and audits* it.

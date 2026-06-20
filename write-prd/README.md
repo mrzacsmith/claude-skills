@@ -34,5 +34,5 @@ Create a Product Requirements Document through an interactive interview process,
 ## Install
 
 ```bash
-cp write-prd.md ~/.claude/commands/
+cp -R write-prd ~/.claude/skills/
 ```

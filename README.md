@@ -1,6 +1,6 @@
 # claude-skills
 
-A collection of 16 Claude Code custom skills (slash commands) for structured development workflows.
+A collection of 17 Claude Code custom skills for structured development workflows.
 
 ## Skills
 
@@ -22,6 +22,7 @@ A collection of 16 Claude Code custom skills (slash commands) for structured dev
 | [e2e-setup](./e2e-setup/) | `/e2e-setup` | Scaffold Playwright E2E testing with auto-detection |
 | [code-quality](./code-quality/) | `/code-quality` | Apply the Code Quality Playbook baseline (Prettier, ESLint, husky, CI gate) + optional npm→pnpm migration |
 | [do-work](./do-work/) | `/do-work` | Execute a unit of work end-to-end (understand→plan→build→validate→commit) driven by feedback loops |
+| [rams](./rams/) | `/rams` | Accessibility + visual design review in the voice of Rams |
 
 ## Prerequisites
 
@@ -77,4 +78,10 @@ Other dependencies:
 
 ## Installation
 
-Copy any skill's `.md` file into your `~/.claude/commands/` directory (global) or `.claude/commands/` in a project (project-scoped). Then use the corresponding `/command` in Claude Code.
+Each skill is a directory containing a `SKILL.md` (with `name`/`description` frontmatter). Copy the whole skill directory into your skills folder — `~/.claude/skills/` (global) or `.claude/skills/` in a project (project-scoped):
+
+```bash
+cp -R <skill> ~/.claude/skills/
+```
+
+Then use the corresponding `/command` in Claude Code. Each skill's own README has its exact install line.

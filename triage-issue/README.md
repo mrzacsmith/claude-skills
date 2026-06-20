@@ -37,5 +37,5 @@ Investigate a reported problem, find root cause, and file a GitHub issue with a 
 ## Install
 
 ```bash
-cp triage-issue.md ~/.claude/commands/
+cp -R triage-issue ~/.claude/skills/
 ```
