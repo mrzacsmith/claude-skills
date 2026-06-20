@@ -27,5 +27,5 @@ This is read-only — no files are modified.
 ## Install
 
 ```bash
-cp catchup.md ~/.claude/commands/
+cp -R catchup ~/.claude/skills/
 ```

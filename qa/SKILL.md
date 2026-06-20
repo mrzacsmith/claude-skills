@@ -1,3 +1,8 @@
+---
+name: qa
+description: Rapidly file one or more well-structured, agent-friendly GitHub issues in the current repo. Use to quickly capture bugs or tasks as issues or when the user runs /qa.
+---
+
 # Quick Add Issues
 
 Rapidly file one or more well-structured, AI-agent-friendly GitHub issues in the current repo.

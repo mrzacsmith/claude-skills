@@ -43,5 +43,5 @@ Work through open GitHub issues one at a time using TDD, feature branches, and P
 ## Install
 
 ```bash
-cp grind.md ~/.claude/commands/
+cp -R grind ~/.claude/skills/
 ```

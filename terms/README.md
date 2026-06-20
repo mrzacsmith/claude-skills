@@ -28,5 +28,5 @@ Run it inside a repo to bootstrap a glossary, or re-run it to audit and refine a
 ## Install
 
 ```bash
-cp terms.md ~/.claude/commands/
+cp -R terms ~/.claude/skills/
 ```

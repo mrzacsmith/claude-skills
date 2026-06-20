@@ -38,5 +38,5 @@ If no glossary exists, it offers to start one with [`/terms`](../terms/). With n
 ## Install
 
 ```bash
-cp grill-me.md ~/.claude/commands/
+cp -R grill-me ~/.claude/skills/
 ```

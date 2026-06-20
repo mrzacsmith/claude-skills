@@ -1,3 +1,8 @@
+---
+name: commit
+description: Create git commits for staged and unstaged changes using the emoji commit-message format, with optional push. Use when the user wants to commit or check in changes, or runs /commit.
+---
+
 # Commit Changes
 
 Create a git commit for staged and unstaged changes using emoji commit format.

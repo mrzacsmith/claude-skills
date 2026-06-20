@@ -1,3 +1,8 @@
+---
+name: write-prd
+description: Create a Product Requirements Document through an interactive interview, then file it as a GitHub issue. Use to write a PRD or spec or when the user runs /write-prd.
+---
+
 # Write a PRD
 
 Create a Product Requirements Document through an interactive interview process, then submit it as a GitHub issue in the current repository.

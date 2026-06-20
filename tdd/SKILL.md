@@ -1,3 +1,8 @@
+---
+name: tdd
+description: Build features or fix bugs using red-green-refactor TDD with vertical slices, where tests verify behavior through public interfaces. Use for test-driven development or when the user runs /tdd.
+---
+
 # Test-Driven Development
 
 Build features or fix bugs using red-green-refactor TDD with vertical slices.

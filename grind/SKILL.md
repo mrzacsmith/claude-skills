@@ -1,3 +1,8 @@
+---
+name: grind
+description: Work through open GitHub issues one at a time, each executed as a complete unit of work through a feedback loop (TDD then validate, never advancing on red) behind an enforced lint-staged and Prettier quality gate, then shipped as a feature branch and PR. Use to grind issues or when the user runs /grind.
+---
+
 # Grind Issues
 
 Work through open GitHub issues one at a time — each issue executed as a complete

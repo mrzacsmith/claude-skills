@@ -27,5 +27,5 @@ Run it on a scoped task, or let another skill (e.g. `/prd-to-plan`, `/grind`) ha
 ## Install
 
 ```bash
-cp do-work.md ~/.claude/commands/
+cp -R do-work ~/.claude/skills/
 ```

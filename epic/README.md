@@ -29,5 +29,5 @@ Generate structured development epics with a 7-phase interactive approval workfl
 ## Install
 
 ```bash
-cp epic.md ~/.claude/commands/
+cp -R epic ~/.claude/skills/
 ```

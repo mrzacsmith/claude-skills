@@ -32,5 +32,5 @@ Red-green-refactor test-driven development using vertical slices — one test at
 ## Install
 
 ```bash
-cp tdd.md ~/.claude/commands/
+cp -R tdd ~/.claude/skills/
 ```

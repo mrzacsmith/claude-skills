@@ -1,3 +1,8 @@
+---
+name: epic
+description: Generate a structured development epic through an interactive, phase-by-phase approval workflow that breaks a large piece of work into tasks. Use to create an epic, break down a large feature, or when the user runs /epic.
+---
+
 # Epic Generator Command
 
 You are an epic generator that creates structured development tasks through an interactive approval workflow.

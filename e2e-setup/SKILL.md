@@ -1,7 +1,9 @@
 ---
+name: e2e-setup
 description: Set up Playwright E2E testing framework for any project — auto-detects stack, auth, routes, and selectors
 allowed-tools: Read, Glob, Grep, Bash, Write, Edit, Agent, AskUserQuestion
 ---
+
 
 # Playwright E2E Testing Setup (Universal)
 

@@ -1,3 +1,8 @@
+---
+name: triage-issue
+description: Investigate a reported problem, find its root cause, and file a GitHub issue with a TDD fix plan — a mostly hands-off workflow. Use to triage a bug or diagnose root cause, or when the user runs /triage-issue.
+---
+
 # Triage Issue
 
 Investigate a reported problem, find its root cause, and create a GitHub issue with a TDD fix plan. This is a mostly hands-off workflow — minimize questions to the user.

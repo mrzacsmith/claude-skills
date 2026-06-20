@@ -35,5 +35,5 @@ Structured git commits with emoji-prefixed messages.
 ## Install
 
 ```bash
-cp commit.md ~/.claude/commands/
+cp -R commit ~/.claude/skills/
 ```

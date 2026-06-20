@@ -38,5 +38,5 @@ Accepts the PRD as a GitHub issue number, local file path, or from a previous `/
 ## Install
 
 ```bash
-cp prd-to-plan.md ~/.claude/commands/
+cp -R prd-to-plan ~/.claude/skills/
 ```
