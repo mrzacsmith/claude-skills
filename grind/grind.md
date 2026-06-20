@@ -1,6 +1,22 @@
 # Grind Issues
 
-Work through open GitHub issues one at a time using TDD, feature branches, and PRs.
+Work through open GitHub issues one at a time — each issue executed as a complete
+**unit of work** through a feedback loop (TDD → validate → never advance on red),
+behind an enforced quality gate (lint-staged + Prettier + precommit hook), then
+shipped as a feature branch + PR.
+
+Grind is the **orchestrator**. It composes two other skills rather than
+reimplementing them:
+
+- **`/code-quality`** — sets up the quality gate once per repo (husky +
+  lint-staged + Prettier + CI lint gate). Grind ensures it exists, then relies on
+  it.
+- **`/do-work`** — executes each issue through the feedback loop (build →
+  validate → commit, never advancing on a red signal). Grind hands each issue to
+  it when available.
+
+Grind owns the **queue**: fetching issues, branching, ordering by dependency,
+opening PRs, and reporting.
 
 ## Arguments
 
@@ -22,6 +38,27 @@ gh repo view --json nameWithOwner -q .nameWithOwner
   ```bash
   gh repo view --json defaultBranchRef -q .defaultBranchRef.name
   ```
+
+### Quality gate (feedback-loop enforcement)
+
+Grind depends on a quality gate so every commit is auto-formatted and
+lint-checked — that's what makes the feedback loop robust instead of optional.
+Detect whether it exists:
+
+```bash
+ls .husky/pre-commit 2>/dev/null && echo "precommit hook ✓"
+grep -q '"lint-staged"' package.json 2>/dev/null && echo "lint-staged ✓"
+grep -qE '"(lint|typecheck|build)"[[:space:]]*:' package.json 2>/dev/null && echo "scripts ✓"
+```
+
+- **If the gate is missing**, offer to run `/code-quality` once before grinding —
+  it installs husky + lint-staged + Prettier + a CI lint gate idempotently. The
+  CI gate fires on the PRs grind opens, so it's the real team-wide backstop (the
+  local hook is fast but bypassable).
+- **If the user declines**, continue anyway — grind degrades gracefully to
+  whatever checks exist. A missing hook is never a hard blocker.
+- **If present**, note the project's real validation commands (`lint`,
+  `typecheck`, `build`, test runner). The issue loop (Step 2c) runs these.
 
 ---
 
@@ -80,9 +117,13 @@ git checkout -b fix/<number>-brief-slug
 
 Keep the slug to 3-4 words max, lowercase, hyphenated.
 
-### 2c. TDD Implementation
+### 2c. Execute the Issue (feedback loop)
 
-Follow the TDD workflow (red-green-refactor, vertical slices):
+Each issue is a complete **unit of work**: build it, prove it, commit it — never
+advancing on a red signal. **If `/do-work` is available, hand the issue to it** and
+let it drive the loop. Otherwise run the loop inline:
+
+**1. TDD — the behavioral loop** (red → green → refactor, vertical slices):
 
 1. **Identify behaviors** — From the issue, determine what testable behaviors need to exist.
 2. **Write one test** — Write a test for the first behavior. Run it. Confirm it fails (RED).
@@ -97,6 +138,21 @@ Rules:
 - Mock only at system boundaries (external APIs, time, etc.).
 - If the project has existing test patterns, follow them.
 - If no test infrastructure exists, set it up minimally before starting.
+
+**2. Validate — the correctness loop.** Before committing, run the project's real
+signals (from Step 0), cheapest first, and **loop until all green**:
+
+```
+typecheck / lint  →  tests  →  build
+```
+
+On any red: fix the cause, re-run **that** check, repeat. **Do not commit while
+any signal is red.** This loop is the fast feedback; the precommit hook (next
+step) is the safety net on top of it — not a substitute for it.
+
+**3. Self-review.** Read the diff as if reviewing someone else's PR: does it do
+exactly what the issue asked (no scope creep), match conventions, leave no debug
+cruft? If not, loop back to step 1.
 
 ### 2d. Commit and Push
 
@@ -114,6 +170,12 @@ EOF
 )"
 git push -u origin <branch-name>
 ```
+
+**The precommit hook runs here.** When the quality gate is present, lint-staged
+auto-formats the staged files with Prettier and blocks the commit on lint errors —
+so the committed tree may differ from what you staged. That's expected; it's the
+enforcement layer. **Never bypass it with `--no-verify`** to force a red commit
+through; fix the cause and re-commit.
 
 Use the emoji commit format from `/commit`:
 - `🐛 FIX:` for bug fixes
@@ -205,11 +267,13 @@ Return to the default branch when done.
 
 1. **One issue at a time** — finish or explicitly skip before moving on
 2. **Always use feature branches** — never commit directly to the default branch
-3. **TDD is mandatory** — write tests first, then implement. Skip only if the issue is purely config/docs
-4. **Commits reference issues** — use `Fixes #N` in the final commit and PR body
-5. **Comments are concise** — "Starting work." and "PR ready: <url>" are enough. No essays.
-6. **Don't merge PRs** — create them and leave for the user to review and merge
-7. **Ask before skipping** — if an issue is unclear or blocked, ask the user rather than silently skipping
-8. **Respect existing patterns** — match the project's test framework, code style, and conventions
-9. **Atomic branches** — each branch addresses exactly one issue. No scope creep.
-10. **Stay on the default branch between issues** — always return before starting the next one
+3. **Quality gate first** — ensure the lint-staged/Prettier precommit gate exists (offer `/code-quality` if missing); rely on it, never bypass it
+4. **TDD is mandatory** — write tests first, then implement. Skip only if the issue is purely config/docs
+5. **Never commit on red** — typecheck, lint, tests, and build must be green before the commit; no `--no-verify` to force a failing commit through
+6. **Commits reference issues** — use `Fixes #N` in the final commit and PR body
+7. **Comments are concise** — "Starting work." and "PR ready: <url>" are enough. No essays.
+8. **Don't merge PRs** — create them and leave for the user to review and merge
+9. **Ask before skipping** — if an issue is unclear or blocked, ask the user rather than silently skipping
+10. **Respect existing patterns** — match the project's test framework, code style, and conventions
+11. **Atomic branches** — each branch addresses exactly one issue. No scope creep.
+12. **Stay on the default branch between issues** — always return before starting the next one
