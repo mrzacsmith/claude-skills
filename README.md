@@ -1,6 +1,6 @@
 # claude-skills
 
-A collection of 17 Claude Code custom skills for structured development workflows.
+A collection of 18 Claude Code custom skills for structured development workflows.
 
 ## Skills
 
@@ -23,6 +23,7 @@ A collection of 17 Claude Code custom skills for structured development workflow
 | [code-quality](./code-quality/) | `/code-quality` | Apply the Code Quality Playbook baseline (Prettier, ESLint, husky, CI gate) + optional npm→pnpm migration |
 | [do-work](./do-work/) | `/do-work` | Execute a unit of work end-to-end (understand→plan→build→validate→commit) driven by feedback loops |
 | [rams](./rams/) | `/rams` | Accessibility + visual design review in the voice of Rams |
+| [ffuf-skill](./ffuf-skill/) | `/ffuf-web-fuzzing` | ffuf web fuzzing for authorized pentesting (vendored from jthack/ffuf_claude_skill) |
 
 ## Prerequisites
 
