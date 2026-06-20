@@ -1,6 +1,6 @@
 # claude-skills
 
-A collection of 15 Claude Code custom skills (slash commands) for structured development workflows.
+A collection of 16 Claude Code custom skills (slash commands) for structured development workflows.
 
 ## Skills
 
@@ -21,6 +21,7 @@ A collection of 15 Claude Code custom skills (slash commands) for structured dev
 | [terms](./terms/) | `/terms` | Build & maintain a project's ubiquitous-language glossary (`CONTEXT.md`), ADRs, and context map |
 | [e2e-setup](./e2e-setup/) | `/e2e-setup` | Scaffold Playwright E2E testing with auto-detection |
 | [code-quality](./code-quality/) | `/code-quality` | Apply the Code Quality Playbook baseline (Prettier, ESLint, husky, CI gate) + optional npm→pnpm migration |
+| [do-work](./do-work/) | `/do-work` | Execute a unit of work end-to-end (understand→plan→build→validate→commit) driven by feedback loops |
 
 ## Prerequisites
 
